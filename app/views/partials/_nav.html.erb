@@ -1,0 +1,48 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="<%= root_url %>">
+        <%= image_tag 'logo.png' %> Добрые руки
+      </a>
+      <style type="text/css">
+        .navbar-brand {
+          color: #fff !important;
+          padding-top: 8px;
+        }
+        .navbar-brand img {
+          display: inline-block;
+          width: 50px;
+          margin-top: -5px;
+          margin-left: 45px;
+          padding-right: 7px;
+        }
+      </style>
+      <div class="navbar-btn-right">
+        <% if current_user %>
+          <ul>
+            <li>Signed in as <%= current_user.name %></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'navbar-link' %></li>
+          </ul>
+        <% else %>
+          <%= link_to 'Войти', new_user_session_path, class: 'btn btn-default navbar-btn' %>
+          <%= link_to 'Зарегистрироваться', new_user_registration_path, class: 'btn btn-default navbar-btn' %>
+          <%= link_to 'Sign in with Facebook', user_facebook_omniauth_authorize_path, class: 'btn btn-default navbar-btn' %>
+          <%= link_to 'Sign in with Vkontakte', user_vkontakte_omniauth_authorize_path, class: 'btn btn-default navbar-btn' %>
+        <% end %>
+        <style type="text/css">
+          .navbar-btn-right {
+            color: #fff;
+          }
+          .navbar-btn-right ul {
+            margin-top: 14px;
+            list-style-type: none;
+          }
+          .navbar-btn-right ul li {
+            display: inline;
+            padding-right: 15px;
+          }
+        </style>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,41 @@
+<article class="article-show">
+
+  <h1><strong>Категория: "<%= @article.category.title %>"</strong></h1>  
+  <h3><em>Подкатегория: "<%= @article.subcategory.title %>"</em></h3>
+
+  <h2><%= @article.title %></h2>
+
+  <figure>
+    <%= image_tag @article.image.url(:medium) %>
+    <small><figcaption><em>Изображение</em></figcaption></small>
+    
+  </figure>
+
+
+  <h3><%= @article.description %></h3>
+
+  <p>
+  <%= link_to 'Редактировать объявление', edit_article_path, class: "btn btn-default" %>
+  <%= link_to 'Удалить объявление', article_path, method: :delete, data: { confirm: "Вы уверены?" }, class: "btn btn-default" %>
+  </p>
+  <style type="text/css">
+        .btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+        }
+
+
+</article>
+

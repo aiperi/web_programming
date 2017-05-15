@@ -1,0 +1,50 @@
+body {
+  background-color: #EEEEEE; 
+}
+
+footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+.article-thumbnail {
+  text-align: center;
+}
+
+.article-show {
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.form-width {
+  width: 50%;
+}
+
+.form-section {
+  margin-left: 37%; 
+  /*text-align: center;*/
+}
+
+.navbar-btn-right, .navbar-header p {
+  position: absolute;
+  right: 10rem;
+}
+
+.page-title {
+  text-align: center;
+}
+
+.jumbotron_section {
+  text-align: center;
+}
+
+.jumbotron p {
+  padding-top: 100px;
+}
+

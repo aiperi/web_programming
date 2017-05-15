@@ -1,0 +1,48 @@
+<%= form_for @article, html: {class: 'form-horizontal form-width'} do |f| %>
+
+    <div class="form-group <%= 'has-error' if @article.errors[:category_id].any? %>">
+      <%= f.label :category_id, 'Категория', class: 'col-sm-3 control-label' %>
+      <div class="col-sm-9">
+        <%= f.collection_select :category_id, Category.all, :id, :title, {}, class: 'form-control' %>
+        <%= render 'partials/field_errors', object: @article, field_name: :category_id %>
+      </div>
+    </div>
+
+    <div class="form-group <%= 'has-error' if @article.errors[:subcategory_id].any? %>">
+      <%= f.label :subcategory_id, 'Подкатегория', class: 'col-sm-3 control-label' %>
+      <div class="col-sm-9">
+        <%= f.collection_select :subcategory_id, Subcategory.all, :id, :title, {}, class: 'form-control' %>
+        <%= render 'partials/field_errors', object: @article, field_name: :subcategory_id %>
+      </div>
+    </div>
+
+    <div class="form-group <%= 'has-error' if @article.errors[:title].any? %>">
+      <%= f.label 'Название', class: 'col-sm-3 control-label' %>
+      <div class="col-sm-9">
+        <%= f.text_field :title, class: 'form-control' %>
+        <%= render 'partials/field_errors', object: @article, field_name: :title %>
+      </div>
+    </div>
+
+    <div class="form-group <%= 'has-error' if @article.errors[:description].any? %>">
+      <%= f.label 'Описание', class: 'col-sm-3 control-label' %>
+      <div class="col-sm-9">
+        <%= f.text_area :description, class: 'form-control' %>
+        <%= render 'partials/field_errors', object: @article, field_name: :description %>
+      </div>
+    </div>
+
+    <div class="form-group <%= 'has-error' if @article.errors[:image].any? %>">
+      <%= f.label 'Изображение', class: 'col-sm-3 control-label' %>
+      <div class="col-sm-9">
+        <%= f.file_field :image %>
+        <%= render 'partials/field_errors', object: @article, field_name: :image %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <%= f.submit @button_title, class: 'btn btn-primary' %>
+      </div>
+    </div>
+<% end %>
